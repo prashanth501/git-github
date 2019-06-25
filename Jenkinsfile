@@ -11,11 +11,7 @@ pipeline {
                mail bcc: '', body: 'going to deploy', cc: '', from: '', replyTo: '', subject: 'email ', to: 'prashanth.kochu@gmail.com' 
 			}
         }
-		stage('slack noti'){
-		    steps{
-			   slackSend iconEmoji: '', message: 'going to start deployment', username: ''
-            }
-		}
+		
 		stage('user input'){
 		    steps{
 			   input id: 'Admin and kochu', message: 'for only and user kochu', submitter: 'kochu'
@@ -23,7 +19,7 @@ pipeline {
 	    }
 		stage('code quality'){
 		    steps{
-			   sh 'cd /opt spring3hibernate; mvn checkstyle:checkstyle'
+			   sh 'cd spring3hibernate; mvn checkstyle:checkstyle'
              }
          }			 
 	}
