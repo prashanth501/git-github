@@ -21,5 +21,10 @@ pipeline {
 			   input id: 'Admin and kochu', message: 'for only and user kochu', submitter: 'kochu'
 			 }
 	    }
+		stage('code quality'){
+		    steps{
+			   sh 'cd spring3hibernate; mvn checkstyle:checkstyle'
+             }
+         }			 
 	}
 }
