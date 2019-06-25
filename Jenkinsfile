@@ -8,7 +8,12 @@ pipeline {
         }
 		stage('email noti') {
             steps{
-               mail bcc: '', body: 'going to deploy', cc: '', from: '', replyTo: '', subject: 'email ', to: 'prashanth.kochu@gmail.com'            }
+               mail bcc: '', body: 'going to deploy', cc: '', from: '', replyTo: '', subject: 'email ', to: 'prashanth.kochu@gmail.com' 
+			}
         }
-    }
-}
+		stage('slack noti'){
+		    steps{
+			   slackSend iconEmoji: '', message: 'going to start deployment', username: ''
+            }
+		}
+	}
