@@ -23,7 +23,7 @@ pipeline {
 	    }
 		stage('code quality'){
 		    steps{
-			   sh 'cd spring3hibernate; mvn checkstyle:checkstyle'
+			   sh 'cd /opt spring3hibernate; mvn checkstyle:checkstyle'
              }
          }			 
 	}
