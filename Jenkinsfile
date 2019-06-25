@@ -16,5 +16,10 @@ pipeline {
 			   slackSend iconEmoji: '', message: 'going to start deployment', username: ''
             }
 		}
+		stage('user input'){
+		    steps{
+			   input id: 'Admin and kochu', message: 'for only and user kochu', submitter: 'kochu'
+			 }
+	    }
 	}
 }
