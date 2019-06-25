@@ -1,6 +1,11 @@
 pipeline {
-        agent any
-        stages {
+    agent any
+    stages
+    {
+        stage('')
+        {
+            steps{
+            sh 'git clone '
+            }
         }
-}
     
