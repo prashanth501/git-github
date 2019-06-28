@@ -19,7 +19,7 @@ pipeline {
 	    }
 		stage('mvn '){
 		    steps{
-			   sh 'cd /opt/spring3hibernate/spring3hibernate; mvn deploy'
+			   sh 'cd /opt/spring3hibernate/spring3hibernate; mvn package'
 		     }
 		}
 	        stage('deploy to tomcat'){
