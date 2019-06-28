@@ -24,7 +24,7 @@ pipeline {
 		}
 	        stage('deploy to tomcat'){
 		    steps{
-			    sh 'target/*.war /opt/apache-tomcat-8.5.42/webapps'
+			    sh '/root/.jenkins/workspace/pipeline_test/target /opt/apache-tomcat-8.5.42/webapps'
 			}	
         }			 
 	}
