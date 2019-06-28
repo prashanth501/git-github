@@ -17,7 +17,7 @@ pipeline {
 			   input id: 'Admin and kochu', message: 'for only and user kochu', submitter: 'kochu'
 			 }
 	    }
-		stage('code stability'){
+		stage('mvn '){
 		    steps{
 			   sh 'cd spring3hibernate; mvn compile'
              }
