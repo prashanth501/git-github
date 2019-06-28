@@ -26,8 +26,7 @@ pipeline {
 		    steps{
 			    sh '/root/.jenkins/workspace/pipeline_test/target /opt/apache-tomcat-8.5.42/webapps'
 			}	
-         }
-             }
-         }			 
+        }			 
 	}
 }
+
