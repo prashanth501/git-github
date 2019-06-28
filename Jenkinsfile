@@ -19,7 +19,7 @@ pipeline {
 	    }
 		stage('mvn '){
 		    steps{
-			   sh 'cd spring3hibernate; mvn compile'
+			   sh 'cd spring3hibernate; mvn package'
              }
          }			 
 	}
