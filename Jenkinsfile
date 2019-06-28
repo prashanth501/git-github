@@ -24,7 +24,7 @@ pipeline {
 		}
 	        stage('deploy to tomcat'){
 		    steps{
-			    sh 'cp /root/.jenkins/workspace/pipeline_test/target /opt/apache-tomcat-8.5.42/webapps'
+			    sh 'cp /opt/spring3hibernate/spring3hibernate/target /opt/apache-tomcat-8.5.42/webapps'
 			}	
         }			 
 	}
