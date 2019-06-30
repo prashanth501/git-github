@@ -32,4 +32,5 @@ pipeline {
 	   mail bcc: '', body: '${err}', cc: '', from: '', replyTo: '', subject: 'failure', to: 'prashanth.kochu@gmail.com'
 }
 }
+}
 
