@@ -28,10 +28,11 @@ pipeline {
 			    sh 'cp /opt/spring3hibernate/spring3hibernate/target/*.war /opt/apache-tomcat-8.5.42/webapps'
 			}	
         }			 
-	}catch (err) {
+	} catch (err) {
 	   mail bcc: '', body: '${err}', cc: '', from: '', replyTo: '', subject: 'failure', to: 'prashanth.kochu@gmail.com'
+  }
 }
 }
-}
+
 
 
