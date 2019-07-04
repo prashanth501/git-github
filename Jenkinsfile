@@ -28,20 +28,6 @@ pipeline {
 			}	
         }			 
 	}
-	
-	post {  
-         success {  
-             echo 'This will run only if successful'   
-         }  
-         failure {
- 
-              echo 'Fail'   
-		  
-         unstable {  
-             echo 'This will run only if the run was marked as unstable'  
-         }  
-         
-      }
-	
+
 }
 	
