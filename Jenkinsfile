@@ -1,6 +1,5 @@
 pipeline {
     agent any
-	try{
         stages {
             stage('git clone') {
                  steps{
@@ -28,10 +27,19 @@ pipeline {
 			    sh 'cp /opt/spring3hibernate/spring3hibernate/target/*.war /opt/apache-tomcat-8.5.42/webapps'
 			}	
         }			 
-	} catch (err) {
-	   mail bcc: '', body: '${err}', cc: '', from: '', replyTo: '', subject: 'failure', to: 'prashanth.kochu@gmail.com'
+	}
+	post {  
+         success {  
+             echo 'This will run only if successful'  
+         }  
+         failure {  
+             mail bcc: '', body: "<b>Example</b><br>Project: ${env.JOB_NAME} <br>Build Number: ${env.BUILD_NUMBER} <br> URL de build: ${env.BUILD_URL}", cc: '', charset: 'UTF-8', from: '', mimeType: 'text/html', replyTo: '', subject: "ERROR CI: Project name -> ${env.JOB_NAME}", to: "foo@foomail.com";  
+         }  
+         unstable {  
+             echo 'This will run only if the run was marked as unstable'  
+         }  
+         
+      }
     }
+  }
 }
-}
-}
-
